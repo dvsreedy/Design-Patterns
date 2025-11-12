@@ -1,6 +1,6 @@
 # 🎯 Design Patterns in C++
 
-This repository is dedicated to learning, understanding, and implementing **Design Patterns** in C++.
+This repository is dedicated to learning, understanding, and implementing **Design Patterns**.
 It includes theoretical explanations, example implementations, and practical exercises for each pattern.
 
 ---
@@ -113,7 +113,8 @@ Design patterns are broadly categorized into three groups:
 1. Each folder contains:
 
    * **Concept explanation**
-   * **C++ implementation**
+   * **implementations**
+   * **Assignments**
    * **Test/demo file**
 2. Clone the repo:
 
@@ -136,5 +137,3 @@ By the end of this journey, you’ll:
 * Understand the **purpose and structure** of all major design patterns.
 * Know **when and where to apply** each pattern in real-world C++ development.
 * Be **interview-ready** for architecture and design-related questions.
-
-Would you like me to tailor this README to include your **GitHub repo name**, and maybe add a short section for “Assignments & Progress Tracker” that links to your Excel sheet and code folders?

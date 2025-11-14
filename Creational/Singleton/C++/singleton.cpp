@@ -1,23 +1,35 @@
 #include <iostream>
 #include <string>
 
-public class Singleton {
+class Singleton {
 private:
-    static Singleton instance;
-    string data;
-    // Private constructor to prevent instantiation
-    Singleton(string data) {
-        this->data = data;
-    }
+    static Singleton* instance;
+    std::string data;
+
+    // Private constructor to prevent direct instantiation
+    Singleton(const std::string& data) : data(data) {}
+
 public:
-    static Singleton getInstance() {   
+    // Deleted copy/move to enforce single instance
+    Singleton(const Singleton&) = delete;
+    Singleton& operator=(const Singleton&) = delete;
+    Singleton(Singleton&&) = delete;
+    Singleton& operator=(Singleton&&) = delete;
+
+    // Lazy, non-thread-safe singleton accessor
+    static Singleton* getInstance() {
         if (instance == nullptr) {
-            instance = new Singleton();
+            instance = new Singleton("Default");
         }
         return instance;
-    }   
+    }
+
+    const std::string& getData() const { return data; }
+    void setData(const std::string& d) { data = d; }
 };
 
+// Initialize static member
+Singleton* Singleton::instance = nullptr;
 
 int main() {
     Singleton* s1 = Singleton::getInstance();
